@@ -89,3 +89,8 @@ npm install
 npm run test
 ```
 this will run unit tests and integration test
+
+
+### API docs
+
+Swagger documentation is enabled in `<app-url>/docs`
