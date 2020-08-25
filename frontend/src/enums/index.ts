@@ -1,0 +1,1 @@
+export {SearchType} from './searchtype.enum'

@@ -1,0 +1,17 @@
+package.json
+package-lock.json
+testEslint/
+testProject/
+testTslint/
+testWorkspaceFolder/
+coverage/
+.prettierignore
+.dockerignore
+.eslintignore
+.gitignore
+Dockerfile
+build.ssh
+dist
+*.conf
+.env
+*.example

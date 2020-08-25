@@ -1,0 +1,45 @@
+.users-container {
+    width: 100%;
+    padding-left: 5%;
+
+    .user-details {
+        float: left;
+        width: 30%;
+        max-width: 400px;
+        min-width: 300px;
+        height: 150px;
+        border: 1px solid lightgrey;
+        border-radius: 4px;
+        margin: 8px 12px 8px 0;
+        padding: 8px 6px 8px 16px;
+        .section{
+            padding:2px 0px;
+            
+            span.title {
+                font-weight: normal;
+            }
+            
+            span.value {
+                font-weight: bold;
+            }
+            
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            .see-more{
+                a{
+                    text-decoration: underline;
+                    color:lightblue;
+                    cursor: pointer;
+                }
+            }
+            a:-webkit-any-link {
+                color: black;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
