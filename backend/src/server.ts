@@ -15,17 +15,17 @@ import { Config } from './config';
 import { CommonUtils } from './utils/common.utils';
 
 const init = () => {
-    const app: Express.Application = Express();
+    const _app: Express.Application = Express();
     useContainer(Container);
     const options: RoutingControllersOptions = {
         controllers: CommonUtils.getObjectValues(controllers),
         defaultErrorHandler: false,
         routePrefix: '/api',
     };
-    useExpressServer(app, options);
+    useExpressServer(_app, options);
 
     const client = path.join(__dirname, '../../', Config.CLIENT_PATH);
-    app.use(Express.static(client));
+    _app.use(Express.static(client));
 
     const schemas = validationMetadatasToSchemas({
         refPointerPrefix: '#/components/schemas/',
@@ -49,15 +49,14 @@ const init = () => {
             version: '1.0.0',
         },
     });
-    app.use('/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(spec));
+    _app.use('/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(spec));
 
     if (!Config.REDIS_HOST || !Config.REDIS_PORT || !Config.REDIS_CACHE_TTL) {
         throw new Error(`Redis host, port and cache ttl are mandatory to start the server`);
     }
-    app.use(morgan('combined'));
-  
+    _app.use(morgan('combined'));
 
-    return app;
+    return _app;
 };
 
 const app = init();
